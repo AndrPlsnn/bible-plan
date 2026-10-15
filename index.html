@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<title>План чтения Библии</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1d3a6b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Чтение Библии">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}
+html[data-theme="dark"]{color-scheme:dark}@media (prefers-color-scheme:dark){html:not([data-theme="light"]){color-scheme:dark}}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#eef2f6;--surface:#ffffff;--surface2:#f3f6fa;--text:#14202e;--muted:#526274;--line:#d3dce6;
+  --accent:#1d3a6b;--on-accent:#ffffff;--accent-soft:#dde7f5;
+  --warm:#a84f06;--warm-soft:#fbebd8;--danger:#b3261e;--danger-soft:#fbe4e2;--ok:#1f7a4d;
+  --radius:14px;--shadow:0 1px 2px rgba(20,32,46,.06);
+  --font-h:'Literata',Georgia,serif;--font-b:'Manrope',system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1621;--surface:#162130;--surface2:#1b2838;--text:#e7edf4;--muted:#9fb0c2;--line:#2a3a4d;
+    --accent:#8fb4f0;--on-accent:#0b1829;--accent-soft:#213552;
+    --warm:#f2a24f;--warm-soft:#3b2a16;--danger:#f4958d;--danger-soft:#3d1f1d;--ok:#6fcf9d;
+    --shadow:none;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1621;--surface:#162130;--surface2:#1b2838;--text:#e7edf4;--muted:#9fb0c2;--line:#2a3a4d;
+  --accent:#8fb4f0;--on-accent:#0b1829;--accent-soft:#213552;
+  --warm:#f2a24f;--warm-soft:#3b2a16;--danger:#f4958d;--danger-soft:#3d1f1d;--ok:#6fcf9d;
+  --shadow:none;color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.45 var(--font-b);font-variant-numeric:tabular-nums;overflow-x:hidden}
+#app{max-width:520px;margin:0 auto;padding-block:16px calc(84px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));min-height:100vh}
+#app.nobar{padding-block-end:32px}
+h1,h2,h3{font-family:var(--font-h);margin:0;line-height:1.2}
+h1{font-size:26px;font-weight:700}
+h2{font-size:19px;font-weight:700}
+h3{font-size:16px;font-weight:700}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:14px}
+.top .date{font-size:13px;color:var(--muted)}
+.stack>*+*{margin-top:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.card.warm{border-color:var(--warm);background:var(--warm-soft)}
+.card.err{border-color:var(--danger);background:var(--danger-soft)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;min-width:0}
+.tile b{display:block;font:700 20px/1.1 var(--font-h)}
+.tile span{font-size:12px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none;text-align:center}
+.btn.sec{background:transparent;color:var(--accent)}
+.btn.danger{background:var(--danger);border-color:var(--danger);color:var(--surface)}
+.btn.block{display:flex;width:100%}
+.btn.sm{min-height:36px;padding:0 12px;font-size:14px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.row{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px 10px;min-height:64px}
+.row.done{background:var(--accent-soft);border-color:var(--accent-soft)}
+.chk{flex:none;width:44px;height:44px;border-radius:12px;border:2px solid var(--muted);background:var(--surface);display:grid;place-items:center;color:var(--on-accent)}
+.chk svg{width:24px;height:24px;opacity:0}
+.row.done .chk{background:var(--accent);border-color:var(--accent)}
+.row.done .chk svg{opacity:1}
+.row .ttl{flex:1;min-width:0}
+.row .ttl b{display:block;font-size:17px;font-weight:600}
+.row.done .ttl b{color:var(--muted);text-decoration:line-through}
+.row .ttl small{color:var(--muted);font-size:12px}
+.row a.open{flex:none;min-height:40px;display:inline-flex;align-items:center;padding:0 12px;border:1px solid var(--line);border-radius:10px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none;background:var(--surface)}
+.sec-title{display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 8px}
+.seg{display:flex;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:3px;gap:3px}
+.seg button{flex:1;min-height:38px;border:0;border-radius:9px;background:transparent;font-weight:600;font-size:14px;color:var(--muted);padding:0 6px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.inp{width:100%;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:0 12px}
+textarea.inp{padding:10px 12px;min-height:84px;resize:vertical}
+.inp[disabled]{opacity:.6}
+label.f{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:4px}
+.field+.field{margin-top:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bar{height:8px;background:var(--surface2);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+.tabbar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+.tabbar div{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
+.tabbar button{border:0;background:transparent;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:12px;font-weight:600;color:var(--muted)}
+.tabbar svg{width:24px;height:24px}
+.tabbar button[aria-current="page"]{color:var(--accent)}
+.tabbar button[aria-current="page"] span{border-bottom:2px solid var(--warm)}
+.coll{width:100%;display:block;text-align:left;background:transparent;border:0;padding:0}
+.coll .h{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:36px}
+.coll .h b{font:700 17px var(--font-h)}
+.chev{display:inline-block;transition:transform .15s;margin-right:6px}
+.coll[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.book{margin-top:12px}
+.book .bh{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:4px}
+.cells{display:flex;flex-wrap:wrap;gap:4px}
+.cell{width:32px;height:32px;min-width:28px;padding:0;border:1px solid var(--line);border-radius:7px;background:var(--surface2);font-size:12px;font-weight:600;color:var(--muted)}
+.cell.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.cell.today{box-shadow:0 0 0 2px var(--warm);border-color:var(--warm)}
+.hexrow{display:flex;height:27px;margin-bottom:0}
+.hexrow.odd{margin-left:16px}
+.hex{position:relative;flex:none;width:30px;height:34px;margin-right:2px;padding:0;border:0;background:var(--line);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-size:11px;font-weight:700;color:var(--muted)}
+.hex i{position:absolute;inset:2px;background:var(--surface2);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-style:normal}
+.hex.on i{background:var(--accent);color:var(--on-accent)}
+.hex:focus-visible{outline:none;background:var(--accent)}
+.hex:focus-visible i{inset:4px}
+.hex.today{background:var(--warm)}
+.hexwrap{padding-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.chip{display:inline-flex;align-items:center;background:var(--surface2);border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:600;padding-left:8px}
+.chip button{border:0;background:transparent;min-width:30px;min-height:34px;font-size:18px;color:var(--accent);padding:0 4px}
+.chip button.x{color:var(--danger)}
+.chip span{padding:0 2px}
+table.bal{width:100%;border-collapse:collapse;font-size:14px}
+table.bal th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;padding:4px 0}
+table.bal td{padding:5px 0;border-top:1px solid var(--line)}
+table.bal td:not(:first-child),table.bal th:not(:first-child){text-align:right}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.kv:first-child{border-top:0}
+.kv b{font-weight:700}
+.opt{display:block;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-height:44px}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt b{display:block;font-size:15px}
+.opt small{color:var(--muted);font-size:13px}
+.opt+.opt{margin-top:8px}
+.prow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:6px 10px;align-items:center;padding:6px 0;border-top:1px solid var(--line)}
+.prow label{display:flex;align-items:center;gap:8px;font-size:14px;min-height:36px}
+.prow input[type=checkbox],.cb input{width:22px;height:22px;accent-color:var(--accent);flex:none}
+.cb{display:flex;align-items:center;gap:10px;min-height:44px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));background:var(--text);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:9;max-width:90vw}
+.warnline{color:var(--warm);font-weight:600;font-size:14px;margin-top:8px}
+.errline{color:var(--danger);font-weight:600;font-size:14px}
+.sticky-act{position:sticky;bottom:12px;margin-top:16px}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important;scroll-behavior:auto !important}}
+@media (max-width:359px){.tiles{gap:6px}.tile b{font-size:17px}}
+</style>
+</head>
+<body>
+<div id="app"><main id="screen" aria-live="polite"></main></div>
+<nav id="tabbar" class="tabbar" aria-label="Разделы" hidden><div>
+<button type="button" data-tab="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Сегодня</span></button>
+<button type="button" data-tab="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><span>План</span></button>
+<button type="button" data-tab="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V11M12 20V4M19 20v-6"/></svg><span>Статистика</span></button>
+<button type="button" data-tab="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Настройки</span></button>
+</div></nav>
+<div id="toast" class="toast" role="status" hidden></div>
+<script>
+(function(){
+'use strict';
+/* ===== Данные ===== */
+var KEY = 'bible-plan-v1';
+var CAP = 200000;
+var CATS = [
+  {id:'law',name:'Закон'},{id:'hist',name:'Исторические'},{id:'poetry',name:'Поэзия и мудрость'},
+  {id:'prophets',name:'Пророки'},{id:'gospels',name:'Евангелия'},{id:'acts',name:'Деяния'},
+  {id:'epistles',name:'Послания и Откровение'}
+];
+var RAW = [
+  ['gen','Бытие',50,1,'law'],['exo','Исход',40,2,'law'],['lev','Левит',27,3,'law'],['num','Числа',36,4,'law'],['deu','Второзаконие',34,5,'law'],
+  ['jos','Иисуса Навина',24,6,'hist'],['jdg','Судей',21,7,'hist'],['rut','Руфь',4,8,'hist'],['1sa','1 Царств',31,9,'hist'],['2sa','2 Царств',24,10,'hist'],
+  ['1ki','3 Царств',22,11,'hist'],['2ki','4 Царств',25,12,'hist'],['1ch','1 Паралипоменон',29,13,'hist'],['2ch','2 Паралипоменон',36,14,'hist'],
+  ['ezr','Ездры',10,15,'hist'],['neh','Неемии',13,16,'hist'],['est','Есфирь',10,17,'hist'],
+  ['job','Иова',42,18,'poetry'],['psa','Псалтирь',150,19,'poetry'],['pro','Притчи',31,20,'poetry'],['ecc','Екклесиаст',12,21,'poetry'],['sng','Песня Песней',8,22,'poetry'],
+  ['isa','Исаия',66,23,'prophets'],['jer','Иеремия',52,24,'prophets'],['lam','Плач Иеремии',5,25,'prophets'],['eze','Иезекииль',48,26,'prophets'],['dan','Даниил',12,27,'prophets'],
+  ['hos','Осия',14,28,'prophets'],['joe','Иоиль',3,29,'prophets'],['amo','Амос',9,30,'prophets'],['oba','Авдий',1,31,'prophets'],['jon','Иона',4,32,'prophets'],
+  ['mic','Михей',7,33,'prophets'],['nah','Наум',3,34,'prophets'],['hab','Аввакум',3,35,'prophets'],['zep','Софония',3,36,'prophets'],['hag','Аггей',2,37,'prophets'],
+  ['zec','Захария',14,38,'prophets'],['mal','Малахия',4,39,'prophets'],
+  ['mat','Матфея',28,40,'gospels'],['mrk','Марка',16,41,'gospels'],['luk','Луки',24,42,'gospels'],['jhn','Иоанна',21,43,'gospels'],
+  ['act','Деяния',28,44,'acts'],
+  ['rom','Римлянам',16,45,'epistles'],['1co','1 Коринфянам',16,46,'epistles'],['2co','2 Коринфянам',13,47,'epistles'],['gal','Галатам',6,48,'epistles'],
+  ['eph','Ефесянам',6,49,'epistles'],['php','Филиппийцам',4,50,'epistles'],['col','Колоссянам',4,51,'epistles'],['1th','1 Фессалоникийцам',5,52,'epistles'],
+  ['2th','2 Фессалоникийцам',3,53,'epistles'],['1ti','1 Тимофею',6,54,'epistles'],['2ti','2 Тимофею',4,55,'epistles'],['tit','Титу',3,56,'epistles'],
+  ['phm','Филимону',1,57,'epistles'],['heb','Евреям',13,58,'epistles'],['jas','Иакова',5,59,'epistles'],['1pe','1 Петра',5,60,'epistles'],['2pe','2 Петра',3,61,'epistles'],
+  ['1jn','1 Иоанна',5,62,'epistles'],['2jn','2 Иоанна',1,63,'epistles'],['3jn','3 Иоанна',1,64,'epistles'],['jud','Иуды',1,65,'epistles'],['rev','Откровение',22,66,'epistles']
+];
+var books = RAW.map(function (r) { return {id:r[0],name:r[1],ch:r[2],n:r[3],cat:r[4]}; });
+var bookById = {};
+books.forEach(function (b) { bookById[b.id] = b; });
+var TOTAL_CH = books.reduce(function (s, b) { return s + b.ch; }, 0);
+var catName = {};
+CATS.forEach(function (c) { catName[c.id] = c.name; });
+
+function catBooks(cats) {
+  return books.filter(function (b) { return cats.indexOf(b.cat) >= 0; }).map(function (b) { return b.id; });
+}
+var PRESET_DEFS = {
+  '7': {label:'7 разделов', defs:[['Закон',['law']],['Исторические',['hist']],['Поэзия и мудрость',['poetry']],['Пророки',['prophets']],['Евангелия',['gospels']],['Деяния',['acts']],['Послания',['epistles']]]},
+  '5': {label:'5 разделов', defs:[['Закон',['law']],['Исторические',['hist']],['Поэзия и мудрость',['poetry']],['Пророки',['prophets']],['Новый Завет',['gospels','acts','epistles']]]},
+  '6': {label:'6 разделов', defs:[['Закон',['law']],['Исторические',['hist']],['Поэзия и мудрость',['poetry']],['Пророки',['prophets']],['Евангелия и Деяния',['gospels','acts']],['Послания',['epistles']]]},
+  'custom': {label:'Свой', defs:null}
+};
+var presets = {};
+Object.keys(PRESET_DEFS).forEach(function (k) {
+  var d = PRESET_DEFS[k];
+  presets[k] = {
+    label: d.label,
+    streams: d.defs ? d.defs.map(function (x, i) { return {id:'s' + (i + 1), name:x[0], books:catBooks(x[1])}; })
+                    : [{id:'s1', name:'Раздел 1', books:[]}]
+  };
+});
+function copyStreams(list) {
+  return list.map(function (s) { return {id:s.id, name:s.name, books:s.books.slice()}; });
+}
+function makeStreams(key) { return copyStreams((presets[key] || presets['7']).streams); }
+function rotateBooks(list, bookId) {
+  var i = list.indexOf(bookId);
+  if (i <= 0) return list.slice();
+  return list.slice(i).concat(list.slice(0, i));
+}
+
+/* ===== Даты ===== */
+var todayOverride = null;
+function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+function today() {
+  if (todayOverride) return todayOverride;
+  var d = new Date();
+  return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+}
+function setToday(iso) { todayOverride = (iso && parseISO(iso) != null) ? iso : null; }
+function parseISO(s) {
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '');
+  if (!m) return null;
+  var t = Date.UTC(+m[1], +m[2] - 1, +m[3]), d = new Date(t);
+  if (d.getUTCFullYear() !== +m[1] || d.getUTCMonth() !== +m[2] - 1 || d.getUTCDate() !== +m[3]) return null;
+  return t;
+}
+function addDays(s, n) {
+  var d = new Date(parseISO(s) + n * 864e5);
+  return d.getUTCFullYear() + '-' + pad2(d.getUTCMonth() + 1) + '-' + pad2(d.getUTCDate());
+}
+function diffDays(a, b) { return Math.round((parseISO(a) - parseISO(b)) / 864e5); }
+var DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+function fmtDate(iso, withYear) {
+  var t = parseISO(iso);
+  if (t == null) return '';
+  try {
+    var o = {timeZone:'UTC', day:'numeric', month:'long'};
+    if (withYear) o.year = 'numeric';
+    return new Date(t).toLocaleDateString('ru-RU', o);
+  } catch (e) { return iso; }
+}
+function plural(n, f) {
+  var a = Math.abs(n) % 100, b = a % 10;
+  if (a > 10 && a < 20) return f[2];
+  if (b > 1 && b < 5) return f[1];
+  if (b === 1) return f[0];
+  return f[2];
+}
+function fmtNum(x, d) {
+  var s = (Math.round(x * Math.pow(10, d)) / Math.pow(10, d)).toFixed(d);
+  return s.replace('.', ',');
+}
+
+/* ===== Главы: разбор и форматирование ===== */
+function parseChapters(text, max) {
+  var set = {};
+  String(text || '').split(/[,;\s]+/).forEach(function (part) {
+    if (!part) return;
+    var m = /^(\d+)\s*[-–—]\s*(\d+)$/.exec(part);
+    var a, b;
+    if (m) { a = +m[1]; b = +m[2]; if (a > b) { var t = a; a = b; b = t; } }
+    else if (/^\d+$/.test(part)) { a = b = +part; }
+    else return;
+    for (var i = Math.max(1, a); i <= Math.min(max, b); i++) set[i] = 1;
+  });
+  return Object.keys(set).map(Number).sort(function (x, y) { return x - y; });
+}
+function formatRanges(arr) {
+  var out = [], i = 0;
+  while (i < arr.length) {
+    var j = i;
+    while (j + 1 < arr.length && arr[j + 1] === arr[j] + 1) j++;
+    out.push(j > i ? arr[i] + '–' + arr[j] : '' + arr[i]);
+    i = j + 1;
+  }
+  return out.join(', ');
+}
+function chapterLabel(bookId, ch) { return bookById[bookId].name + ' ' + ch; }
+function chapterUrl(bookId, ch) { return 'https://bible.by/syn/' + bookById[bookId].n + '/' + ch + '/'; }
+
+/* ===== Ядро построения плана ===== */
+function normRead(x) {
+  var s = new Set();
+  if (!x) return s;
+  if (x instanceof Set || Array.isArray(x)) {
+    x.forEach(function (k) { s.add(String(k).split('#')[0]); });
+  } else if (typeof x === 'object') {
+    Object.keys(x).forEach(function (k) { if (x[k] === true || x[k] === 'pre') s.add(k.split('#')[0]); });
+  }
+  return s;
+}
+function isBookData(x) { return Array.isArray(x) && x.length > 0 && x[0] && typeof x[0] === 'object' && 'ch' in x[0]; }
+
+function streamLists(params, bk, read) {
+  var map = {};
+  bk.forEach(function (b) { map[b.id] = b; });
+  var skip = !!params.skipRead;
+  return (params.streams || []).map(function (st) {
+    var L = [];
+    (st.books || []).forEach(function (id) {
+      var b = map[id];
+      if (!b) return;
+      for (var c = 1; c <= b.ch; c++) {
+        if (skip && read.has(id + ':' + c)) continue;
+        L.push({book:id, ch:c});
+      }
+    });
+    return L;
+  });
+}
+
+function core(params, bk, read) {
+  var lists = streamLists(params, bk, read);
+  var N = lists.length;
+  var D = Math.floor(+params.days);
+  if (!(D >= 1)) D = 1;
+  if (D > 3650) D = 3650;
+  var mode = params.finish === 'stop' || params.finish === 'proportional' ? params.finish : 'repeat';
+  var active = [];
+  var total = 0;
+  lists.forEach(function (L, i) { if (L.length) active.push(i); total += L.length; });
+  var S = [], J = [], r, cum, capped = false;
+  if (mode === 'proportional') {
+    r = total / D;
+    var items = [];
+    lists.forEach(function (L, i) { for (var j = 0; j < L.length; j++) items.push([j, i, L.length]); });
+    items.sort(function (a, b) {
+      var x = (a[0] + 1) * b[2], y = (b[0] + 1) * a[2];
+      return x - y || a[1] - b[1] || a[0] - b[0];
+    });
+    items.forEach(function (it) { S.push(it[1]); J.push(it[0]); });
+    cum = function (d) { return d >= D ? total : Math.floor(d * total / D); };
+  } else {
+    r = +params.rate;
+    if (!(r > 0)) r = 0;
+    var T = Math.floor(D * r + 1e-9);
+    if (T > CAP) { T = CAP; capped = true; }
+    var M = active.length;
+    if (M) {
+      if (mode === 'stop') {
+        var act = active.slice(), ptr = {}, pos = 0;
+        act.forEach(function (i) { ptr[i] = 0; });
+        while (S.length < T && act.length) {
+          var si = act[pos];
+          S.push(si); J.push(ptr[si]); ptr[si]++;
+          if (ptr[si] >= lists[si].length) { act.splice(pos, 1); if (pos >= act.length) pos = 0; }
+          else pos = (pos + 1) % act.length;
+        }
+      } else {
+        for (var s = 0; s < T; s++) {
+          var i2 = active[s % M];
+          S.push(i2); J.push(Math.floor(s / M) % lists[i2].length);
+        }
+      }
+    }
+    cum = function (d) { return Math.min(Math.floor(d * r + 1e-9), S.length); };
+  }
+  var Deff = D;
+  if (mode === 'stop' && S.length && cum(D) >= S.length) {
+    Deff = 1;
+    while (cum(Deff) < S.length) Deff++;
+  }
+  var dayStarts = [0];
+  for (var d = 1; d <= Deff; d++) dayStarts.push(cum(d));
+  dayStarts[Deff] = S.length;
+  var counts = lists.map(function () { return 0; });
+  for (var k = 0; k < S.length; k++) counts[S[k]]++;
+  return {lists:lists, S:S, J:J, D:Deff, daysInput:D, rate:r, mode:mode, dayStarts:dayStarts, counts:counts, total:total, active:active, capped:capped};
+}
+
+function buildPlan(params, a2, a3) {
+  var bk = books, read;
+  if (isBookData(a2)) { bk = a2; read = normRead(a3); }
+  else if (isBookData(a3)) { bk = a3; read = normRead(a2); }
+  else read = normRead(a2 || a3);
+  var c = core(params, bk, read);
+  var seen = {}, slots = new Array(c.S.length), day = 1;
+  for (var i = 0; i < c.S.length; i++) {
+    while (day < c.D && i >= c.dayStarts[day]) day++;
+    var st = params.streams[c.S[i]], x = c.lists[c.S[i]][c.J[i]];
+    var kk = x.book + ':' + x.ch;
+    seen[kk] = (seen[kk] || 0) + 1;
+    slots[i] = {key:kk + '#' + seen[kk], book:x.book, ch:x.ch, stream:st.id, si:c.S[i], day:day};
+  }
+  var start = params.startDate;
+  return {
+    slots:slots, dayStarts:c.dayStarts, D:c.D, days:c.D, T:slots.length, rate:c.rate, mode:c.mode,
+    counts:c.counts, lists:c.lists, total:c.total,
+    dayCounts:c.dayStarts.slice(1).map(function (v, i) { return v - c.dayStarts[i]; }),
+    startDate:start, endDate:parseISO(start) != null ? addDays(start, c.D - 1) : null
+  };
+}
+
+/* кэш построенных планов */
+var buildCache = {order:[], map:{}};
+function built(plan) {
+  var sig = JSON.stringify([plan.params, plan.pre || []]);
+  var hit = buildCache.map[sig];
+  if (hit) return hit;
+  var b = buildPlan(plan.params, plan.pre || []);
+  buildCache.map[sig] = b;
+  buildCache.order.push(sig);
+  if (buildCache.order.length > 6) delete buildCache.map[buildCache.order.shift()];
+  return b;
+}
+
+/* ===== Проверка и баланс ===== */
+function validate(params) {
+  var errs = [];
+  var withBooks = (params.streams || []).filter(function (s) { return s.books && s.books.length; });
+  if (!withBooks.length) errs.push('Добавьте хотя бы один раздел хотя бы с одной книгой.');
+  var D = +params.days;
+  if (!(Number.isInteger(D) && D >= 1 && D <= 3650)) errs.push('Срок: целое число дней от 1 до 3650.');
+  if (params.finish !== 'proportional' && !(+params.rate > 0)) errs.push('Скорость должна быть больше нуля.');
+  if (params.finish !== 'proportional' && +params.rate > 100) errs.push('Не больше 100 глав в день.');
+  if (params.finish === 'proportional' && Number.isInteger(D) && D >= 1 && 1189 / D > 100) errs.push('Не больше 100 глав в день: увеличьте срок.');
+  if (parseISO(params.startDate) == null) errs.push('Укажите дату начала.');
+  return errs;
+}
+
+function balance(params, alreadyRead) {
+  var errs = validate(params);
+  var c = core(params, books, normRead(alreadyRead));
+  if (c.capped) errs.push('Слишком много глав в плане (максимум ' + CAP + ').');
+  if (!errs.length && c.S.length === 0) errs.push('В плане не осталось глав для чтения.');
+  var per = c.lists.map(function (L, i) {
+    var st = params.streams[i];
+    var times = L.length ? c.counts[i] / L.length : 0;
+    return {
+      id:st.id, name:st.name, chapters:L.length, slots:c.counts[i], times:times,
+      timesText:L.length ? fmtNum(times, 1) : '0,0',
+      days:(L.length && c.counts[i]) ? L.length / (c.counts[i] / c.D) : null
+    };
+  });
+  var mn = Infinity, mx = -Infinity;
+  for (var d = 1; d < c.dayStarts.length; d++) {
+    var n = c.dayStarts[d] - c.dayStarts[d - 1];
+    if (n < mn) mn = n;
+    if (n > mx) mx = n;
+  }
+  if (mn === Infinity) { mn = 0; mx = 0; }
+  var dd = per.filter(function (p) { return p.days != null; }).map(function (p) { return p.days; });
+  var ratio = dd.length ? Math.max.apply(null, dd) / Math.min.apply(null, dd) : 1;
+  var starved = per.filter(function (p) { return p.chapters > 0 && p.slots === 0; });
+  return {
+    streams:per, totalSlots:c.S.length, perDayMin:mn, perDayMax:mx, perDayText:mn === mx ? '' + mn : mn + '–' + mx,
+    endDate:parseISO(params.startDate) != null ? addDays(params.startDate, c.D - 1) : null,
+    D:c.D, rate:c.rate, ratio:ratio, warning:ratio > 2 || starved.length > 0, starved:starved.map(function (p) { return p.name; }),
+    errors:errs
+  };
+}
+
+/* ===== Отметки, сегодня, серия ===== */
+function dayRange(b, d) { return [b.dayStarts[d - 1], b.dayStarts[d]]; }
+function daySlots(plan, d) {
+  var b = built(plan);
+  if (d < 1 || d > b.D) return [];
+  var r = dayRange(b, d);
+  return b.slots.slice(r[0], r[1]);
+}
+function isDayDone(plan, d) {
+  var b = built(plan), done = plan.done || {}, r = dayRange(b, d);
+  for (var i = r[0]; i < r[1]; i++) if (!done[b.slots[i].key]) return false;
+  return true;
+}
+function dayInfo(plan, todayISO) {
+  var b = built(plan), p = plan.params, done = plan.done || {};
+  var cal = diffDays(todayISO, p.startDate) + 1;
+  var allDone = true, firstUndone = 0;
+  for (var d = 1; d <= b.D; d++) {
+    if (!isDayDone(plan, d)) { allDone = false; firstUndone = d; break; }
+  }
+  var day, lag = 0;
+  if (p.missed === 'shift' || !p.missed) {
+    day = allDone ? b.D : firstUndone;
+    lag = Math.max(0, Math.min(cal, b.D) - day);
+    if (allDone) lag = 0;
+  } else {
+    day = Math.min(Math.max(cal, 1), b.D);
+  }
+  return {day:day, calendarDay:cal, before:cal < 1, finished:allDone, lag:lag, policy:p.missed || 'shift', D:b.D, doneCount:Object.keys(done).length};
+}
+function currentDay(plan, todayISO) { return dayInfo(plan, todayISO || today()).day; }
+function missedSlots(plan, upToDay) {
+  var b = built(plan), done = plan.done || {}, out = [];
+  var end = b.dayStarts[Math.min(Math.max(upToDay - 1, 0), b.D)];
+  for (var i = 0; i < end; i++) if (!done[b.slots[i].key]) out.push(b.slots[i]);
+  return out;
+}
+function markedDates(plan) {
+  var set = {}, done = plan.done || {};
+  Object.keys(done).forEach(function (k) { var v = done[k]; if (typeof v === 'string' && DATE_RE.test(v)) set[v] = 1; });
+  return set;
+}
+function streak(plan, todayISO) {
+  var set = markedDates(plan), t = todayISO || today();
+  var d = set[t] ? t : addDays(t, -1), n = 0;
+  while (set[d]) { n++; d = addDays(d, -1); }
+  return n;
+}
+function bestStreak(plan) {
+  var nums = Object.keys(markedDates(plan)).map(function (s) { return Math.round(parseISO(s) / 864e5); }).sort(function (a, b) { return a - b; });
+  var best = 0, cur = 0;
+  for (var i = 0; i < nums.length; i++) {
+    cur = (i > 0 && nums[i] === nums[i - 1] + 1) ? cur + 1 : 1;
+    if (cur > best) best = cur;
+  }
+  return best;
+}
+function progress(plan) {
+  var b = built(plan), done = plan.done || {}, n = 0;
+  for (var i = 0; i < b.slots.length; i++) if (done[b.slots[i].key]) n++;
+  return {done:n, total:b.slots.length, pct:b.slots.length ? Math.round(n * 100 / b.slots.length) : 0};
+}
+function avg7(plan, todayISO) {
+  var done = plan.done || {}, t = todayISO || today(), n = 0;
+  Object.keys(done).forEach(function (k) {
+    var v = done[k];
+    if (typeof v === 'string' && DATE_RE.test(v)) { var df = diffDays(t, v); if (df >= 0 && df <= 6) n++; }
+  });
+  return n / 7;
+}
+function forecast(plan, todayISO) {
+  var b = built(plan), t = todayISO || today(), p = plan.params;
+  if (p.missed === 'shift' || !p.missed) {
+    var rem = 0;
+    for (var d = 1; d <= b.D; d++) if (!isDayDone(plan, d) && b.dayStarts[d] > b.dayStarts[d - 1]) rem++;
+    var base = diffDays(t, p.startDate) < 0 ? p.startDate : t;
+    return rem === 0 ? null : addDays(base, rem - 1);
+  }
+  return b.endDate;
+}
+function bibleChapters(plans) {
+  var seen = {};
+  (plans || []).forEach(function (pl) {
+    Object.keys(pl.done || {}).forEach(function (k) { seen[k.split('#')[0]] = 1; });
+  });
+  return Object.keys(seen).filter(function (k) { var a = k.split(':'); return bookById[a[0]] && +a[1] >= 1 && +a[1] <= bookById[a[0]].ch; }).length;
+}
+
+/* ===== Состояние и хранилище ===== */
+var state = {v:1, plans:[], activeId:null, theme:'auto'};
+var memoryStore = null;
+
+function uid() { return 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+function normalizePlan(p) {
+  if (!p || typeof p !== 'object' || !p.params || !Array.isArray(p.params.streams)) return null;
+  var q = p.params;
+  var streams = q.streams.filter(function (s) { return s && Array.isArray(s.books); }).map(function (s, i) {
+    return {id:String(s.id || 's' + (i + 1)), name:String(s.name || 'Раздел ' + (i + 1)), books:s.books.filter(function (id) { return bookById[id]; })};
+  });
+  if (!streams.length) return null;
+  var days = Math.floor(+q.days);
+  if (!(days >= 1)) days = 1;
+  if (days > 3650) days = 3650;
+  var rate = +q.rate;
+  if (!(rate > 0)) rate = 1;
+  if (rate > 100) rate = 100;
+  var params = {
+    streams:streams, days:days, rate:rate, startDate:parseISO(q.startDate) != null ? q.startDate : today(),
+    finish:['repeat', 'stop', 'proportional'].indexOf(q.finish) >= 0 ? q.finish : 'repeat',
+    missed:['shift', 'catchup', 'ignore'].indexOf(q.missed) >= 0 ? q.missed : 'shift',
+    skipRead:!!q.skipRead
+  };
+  var done = {};
+  if (p.done && typeof p.done === 'object') {
+    Object.keys(p.done).forEach(function (k) {
+      var v = p.done[k];
+      if (/^[0-9a-z]+:\d+#\d+$/.test(k) && (v === 'pre' || (typeof v === 'string' && DATE_RE.test(v)))) done[k] = v;
+    });
+  }
+  var notes = {};
+  if (p.notes && typeof p.notes === 'object') {
+    Object.keys(p.notes).forEach(function (k) { if (/^\d+$/.test(k) && typeof p.notes[k] === 'string' && p.notes[k]) notes[k] = p.notes[k]; });
+  }
+  var pre = Array.isArray(p.pre) ? p.pre.filter(function (k) { return typeof k === 'string' && /^[0-9a-z]+:\d+$/.test(k); }) : [];
+  return {id:String(p.id || uid()), name:String(p.name || 'План'), params:params, pre:pre, done:done, notes:notes, created:p.created || today()};
+}
+function normalizeState(o) {
+  if (!o || typeof o !== 'object' || !Array.isArray(o.plans)) return null;
+  var plans = o.plans.map(normalizePlan).filter(Boolean);
+  var ids = {};
+  plans.forEach(function (p) { while (ids[p.id]) p.id = uid(); ids[p.id] = 1; });
+  var active = plans.some(function (p) { return p.id === o.activeId; }) ? o.activeId : (plans[0] ? plans[0].id : null);
+  return {v:1, plans:plans, activeId:active, theme:['auto', 'light', 'dark'].indexOf(o.theme) >= 0 ? o.theme : 'auto'};
+}
+function loadState() {
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (raw) { var n = normalizeState(JSON.parse(raw)); if (n) state = n; }
+  } catch (e) { /* хранилище недоступно: работаем в памяти */ }
+}
+function saveState() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { memoryStore = null; }
+}
+function activePlan() {
+  for (var i = 0; i < state.plans.length; i++) if (state.plans[i].id === state.activeId) return state.plans[i];
+  return null;
+}
+
+/* создание плана из параметров (чистая функция) */
+function makePlan(name, params, preMap) {
+  var pre = [], done = {};
+  var map = preMap || {};
+  Object.keys(map).forEach(function (bid) {
+    if (!bookById[bid]) return;
+    (map[bid] || []).forEach(function (c) {
+      if (c >= 1 && c <= bookById[bid].ch) { pre.push(bid + ':' + c); done[bid + ':' + c + '#1'] = 'pre'; }
+    });
+  });
+  var p = JSON.parse(JSON.stringify(params));
+  if (p.finish === 'proportional') p.rate = core(p, books, normRead(pre)).rate || 1;
+  return normalizePlan({id:uid(), name:name || 'План', params:p, pre:pre, done:done, notes:{}, created:today()});
+}
+
+/* ===== Публичный API ===== */
+window.BP = {
+  books:books, cats:CATS, total:TOTAL_CH, presets:presets, makeStreams:makeStreams,
+  buildPlan:buildPlan, balance:balance, validate:validate,
+  currentDay:currentDay, dayInfo:dayInfo, streak:streak, bestStreak:bestStreak, forecast:forecast, progress:progress,
+  missedSlots:missedSlots, daySlots:daySlots, makePlan:makePlan, parseChapters:parseChapters, formatRanges:formatRanges,
+  setToday:setToday, today:today, addDays:addDays, diffDays:diffDays, normalizeState:normalizeState
+};
+Object.defineProperty(window.BP, 'state', {get:function () { return state; }, enumerable:true});
+/* ===== Интерфейс ===== */
+var $ = function (id) { return document.getElementById(id); };
+var ui = {tab:'today', wizard:null, pin:null, planView:'grid', collapsed:{out:true}, confirmDel:null, restore:null, restoreMsg:'', preOpen:false};
+var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+var POLICIES = [
+  {v:'shift', t:'Сдвигать план', d:'Текущий день плана: первый день с непрочитанными главами. Календарь не влияет.'},
+  {v:'catchup', t:'Догонять', d:'День по календарю. Пропущенные главы показываются отдельным блоком «Догнать».'},
+  {v:'ignore', t:'Игнорировать', d:'День по календарю. Пропущенное видно только в списке «Пропущено» на экране «План».'}
+];
+var FINISHES = [
+  {v:'repeat', t:'Повторять', d:'Закончившийся раздел начинается заново, пока не кончится срок.'},
+  {v:'stop', t:'Остановить', d:'Закончившийся раздел выпадает из круга; план кончается, когда прочитано всё.'},
+  {v:'proportional', t:'Пропорционально', d:'Все разделы заканчиваются в один день; скорость вычисляется.'}
+];
+
+function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]; }); }
+function toast(msg) {
+  var t = $('toast');
+  t.textContent = msg; t.hidden = false;
+  clearTimeout(toast.t);
+  toast.t = setTimeout(function () { t.hidden = true; }, 2200);
+}
+function applyTheme() {
+  var r = document.documentElement;
+  if (state.theme === 'light' || state.theme === 'dark') r.setAttribute('data-theme', state.theme);
+  else r.removeAttribute('data-theme');
+}
+function trimNum(x, d) {
+  if (!isFinite(x)) return '';
+  return String(parseFloat(x.toFixed(d || 3))).replace('.', ',');
+}
+function parseNum(s) {
+  s = String(s).trim().replace(',', '.');
+  return s === '' ? NaN : +s;
+}
+function plansDone(plan, bookId, ch) { return !!(plan.done && plan.done[bookId + ':' + ch + '#1']); }
+
+/* ----- Сегодня ----- */
+function slotRow(plan, s, extra) {
+  var done = !!plan.done[s.key], label = chapterLabel(s.book, s.ch), st = plan.params.streams[s.si];
+  return '<div class="row' + (done ? ' done' : '') + '" data-act="tog" data-key="' + esc(s.key) + '">' +
+    '<button type="button" class="chk" data-act="tog" data-key="' + esc(s.key) + '" aria-pressed="' + done + '" aria-label="Прочитано: ' + esc(label) + '">' + CHECK + '</button>' +
+    '<div class="ttl"><b>' + esc(label) + '</b><small>' + esc(st ? st.name : '') + (extra ? ' · ' + extra : '') + '</small></div>' +
+    '<a class="open" href="' + chapterUrl(s.book, s.ch) + '" target="_blank" rel="noopener" aria-label="Открыть на сайте: ' + esc(label) + '">Открыть</a></div>';
+}
+function nextDayWithSlots(plan, d) {
+  var b = built(plan);
+  for (var x = d + 1; x <= b.D; x++) if (b.dayStarts[x] > b.dayStarts[x - 1]) return x;
+  return null;
+}
+function todayHTML(plan) {
+  var t = BP.today(), info = dayInfo(plan, t), b = built(plan), prog = progress(plan);
+  var view = ui.pin != null ? Math.min(Math.max(ui.pin, 1), b.D) : info.day;
+  var slots = daySlots(plan, view), allDone = slots.length > 0 && isDayDone(plan, view);
+  var h = '<div class="top"><div><div class="date">' + esc(fmtDate(t, true)) + '</div><h1>Сегодня</h1></div><div class="muted small">' + esc(plan.name) + '</div></div>';
+  h += '<div class="tiles"><div class="tile"><b>' + streak(plan, t) + '</b><span>' + plural(streak(plan, t), ['день подряд', 'дня подряд', 'дней подряд']) + '</span></div>' +
+    '<div class="tile"><b>' + prog.pct + '%</b><span>плана</span></div>' +
+    '<div class="tile"><b>' + view + ' / ' + b.D + '</b><span>день плана</span></div></div><div class="stack" style="margin-top:12px">';
+  if (info.before) {
+    var n = -info.calendarDay + 1;
+    h += '<div class="card warm"><h3>План начнётся ' + esc(fmtDate(plan.params.startDate)) + '</h3><p class="small">Через ' + n + ' ' + plural(n, ['день', 'дня', 'дней']) + '. Можно заглянуть в первый день заранее.</p>' +
+      (ui.pin == null ? '<button type="button" class="btn sec block" style="margin-top:10px" data-act="ahead" data-d="1">Посмотреть день 1</button>' : '') + '</div>';
+    if (ui.pin == null) return h + '</div>';
+  }
+  if (info.finished && ui.pin == null) {
+    h += '<div class="card"><h2>План завершён</h2><p class="muted">Все главы плана отмечены. Создайте новый план в настройках.</p></div>';
+    return h + '</div>';
+  }
+  if (info.policy === 'shift' && info.lag > 0 && !info.before) {
+    h += '<div class="card"><p class="small"><b>Отставание от календаря: ' + info.lag + ' ' + plural(info.lag, ['день', 'дня', 'дней']) + '.</b> План не сгорает: вы продолжаете с того места, где остановились.</p></div>';
+  }
+  if (info.policy === 'catchup' && view === info.day) {
+    var miss = missedSlots(plan, info.day);
+    if (miss.length) {
+      h += '<div class="card warm"><div class="sec-title" style="margin:0 0 8px"><h3>Догнать</h3><span class="small">' + miss.length + '</span></div><div class="stack">';
+      miss.slice(0, 30).forEach(function (s) { h += slotRow(plan, s, 'день ' + s.day); });
+      h += '</div>' + (miss.length > 30 ? '<p class="small muted" style="margin-top:8px">Показаны первые 30 из ' + miss.length + '.</p>' : '') + '</div>';
+    }
+  }
+  var tag = view === info.day ? 'Сегодня' : (view > info.day ? 'Впереди' : 'Раньше');
+  h += '<div class="card"><div class="sec-title" style="margin:0 0 10px"><h2>' + tag + ', день ' + view + '</h2><span class="small muted">' + slots.length + ' ' + plural(slots.length, ['глава', 'главы', 'глав']) + '</span></div>';
+  if (!slots.length) {
+    h += '<p class="muted">День отдыха. Отметки не требуются.</p>';
+  } else {
+    h += '<div class="stack">';
+    slots.forEach(function (s) { h += slotRow(plan, s); });
+    h += '</div><button type="button" class="btn ' + (allDone ? 'sec' : '') + ' block" style="margin-top:12px" data-act="allday" data-d="' + view + '">' + (allDone ? 'Снять отметки дня' : 'Весь день прочитан') + '</button>';
+  }
+  if (allDone) h += '<p style="margin-top:12px;font-weight:700;color:var(--ok)">День выполнен</p>';
+  h += '</div>';
+  var nd = nextDayWithSlots(plan, view);
+  var btns = '';
+  if (nd) btns += '<button type="button" class="btn sec block" data-act="ahead" data-d="' + nd + '">Читать вперёд: день ' + nd + '</button>';
+  if (ui.pin != null && view !== info.day && !(info.finished)) btns += '<button type="button" class="btn sec block" style="margin-top:8px" data-act="backtoday">' + (view > info.day ? 'К сегодняшнему дню' : 'К текущему дню плана') + '</button>';
+  h += btns;
+  h += '<div class="card"><label class="f" for="note">Заметка к дню ' + view + '</label><textarea id="note" class="inp" data-note="' + view + '" placeholder="Мысли, вопросы, стихи">' + esc(plan.notes[view] || '') + '</textarea></div>';
+  return h + '</div>';
+}
+
+/* ----- План ----- */
+function streamStats(plan, st) {
+  var tot = 0, rd = 0;
+  st.books.forEach(function (id) {
+    var b = bookById[id];
+    if (!b) return;
+    tot += b.ch;
+    for (var c = 1; c <= b.ch; c++) if (plansDone(plan, id, c)) rd++;
+  });
+  return {tot:tot, rd:rd};
+}
+function hexPerRow() {
+  var w = $('screen').clientWidth || 360;
+  return Math.max(4, Math.floor((w - 12 * 2 - 2 - 16) / 32));
+}
+function bookCells(plan, id, todaySet) {
+  var b = bookById[id], rd = 0, h = '';
+  var per = ui.planView === 'hex' ? hexPerRow() : 0, rowN = 0;
+  for (var c = 1; c <= b.ch; c++) {
+    var on = plansDone(plan, id, c), td = todaySet[id + ':' + c];
+    if (on) rd++;
+    var cls = (on ? ' on' : '') + (td ? ' today' : '');
+    var attrs = ' data-act="cell" data-book="' + id + '" data-ch="' + c + '" aria-pressed="' + on + '" aria-label="' + esc(chapterLabel(id, c)) + (td ? ', на сегодня' : '') + '"';
+    if (per) {
+      if ((c - 1) % per === 0) { h += (c > 1 ? '</div>' : '') + '<div class="hexrow' + (rowN % 2 ? ' odd' : '') + '">'; rowN++; }
+      h += '<button type="button" class="hex' + cls + '"' + attrs + '><i>' + c + '</i></button>';
+    } else {
+      h += '<button type="button" class="cell' + cls + '"' + attrs + '>' + c + '</button>';
+    }
+  }
+  if (per) h = '<div class="hexwrap">' + h + '</div></div>';
+  else h = '<div class="cells">' + h + '</div>';
+  return '<div class="book"><div class="bh"><span>' + esc(b.name) + '</span><span class="muted">' + rd + '/' + b.ch + '</span></div>' + h + '</div>';
+}
+function planHTML(plan) {
+  var t = BP.today(), info = dayInfo(plan, t), todaySet = {};
+  if (!info.before) daySlots(plan, info.day).forEach(function (s) { todaySet[s.book + ':' + s.ch] = 1; });
+  var h = '<div class="top"><h1>План</h1><div class="muted small">' + esc(plan.name) + '</div></div>';
+  h += '<div class="seg" role="group" aria-label="Вид"><button type="button" data-act="pview" data-v="grid" aria-pressed="' + (ui.planView === 'grid') + '">Сетка</button><button type="button" data-act="pview" data-v="hex" aria-pressed="' + (ui.planView === 'hex') + '">Соты</button></div><div class="stack" style="margin-top:12px">';
+  if (info.policy === 'ignore' && !info.before) {
+    var miss = missedSlots(plan, info.day);
+    h += '<div class="card ' + (miss.length ? 'warm' : '') + '"><div class="sec-title" style="margin:0"><h3>Пропущено</h3><span class="small">' + miss.length + '</span></div>';
+    if (!miss.length) h += '<p class="small muted">Пропусков нет.</p>';
+    else {
+      h += '<div class="stack" style="margin-top:8px">';
+      miss.slice(0, 40).forEach(function (s) { h += slotRow(plan, s, 'день ' + s.day); });
+      h += '</div>' + (miss.length > 40 ? '<p class="small muted" style="margin-top:8px">Показаны первые 40 из ' + miss.length + '.</p>' : '');
+    }
+    h += '</div>';
+  }
+  var inPlan = {};
+  plan.params.streams.forEach(function (st) {
+    st.books.forEach(function (id) { inPlan[id] = 1; });
+    var ss = streamStats(plan, st), open = !ui.collapsed[st.id];
+    h += '<section class="card"><button type="button" class="coll" data-act="coll" data-id="' + esc(st.id) + '" aria-expanded="' + open + '"><div class="h"><b><span class="chev" aria-hidden="true">▸</span>' + esc(st.name) + '</b><span class="small muted">' + ss.rd + '/' + ss.tot + '</span></div><div class="bar" aria-hidden="true"><i style="width:' + (ss.tot ? ss.rd * 100 / ss.tot : 0) + '%"></i></div></button>';
+    if (open) st.books.forEach(function (id) { h += bookCells(plan, id, todaySet); });
+    h += '</section>';
+  });
+  var out = books.filter(function (b) { return !inPlan[b.id]; });
+  if (out.length) {
+    var ot = 0, orr = 0;
+    out.forEach(function (b) { ot += b.ch; for (var c = 1; c <= b.ch; c++) if (plansDone(plan, b.id, c)) orr++; });
+    var oo = !ui.collapsed.out;
+    h += '<section class="card"><button type="button" class="coll" data-act="coll" data-id="out" aria-expanded="' + oo + '"><div class="h"><b><span class="chev" aria-hidden="true">▸</span>Вне плана</b><span class="small muted">' + orr + '/' + ot + '</span></div></button>';
+    if (oo) out.forEach(function (b) { h += bookCells(plan, b.id, todaySet); });
+    h += '</section>';
+  }
+  return h + '</div>';
+}
+
+/* ----- Статистика ----- */
+function statsHTML(plan) {
+  var t = BP.today(), prog = progress(plan), read = bibleChapters(state.plans), fc = forecast(plan, t), b = built(plan);
+  var h = '<div class="top"><h1>Статистика</h1><div class="muted small">' + esc(plan.name) + '</div></div><div class="stack">';
+  h += '<div class="card"><div class="kv"><span>План выполнен</span><b>' + prog.pct + '%</b></div><div class="bar" style="margin:4px 0 8px"><i style="width:' + prog.pct + '%"></i></div>' +
+    '<div class="kv"><span>Глав в плане отмечено</span><b>' + prog.done + ' из ' + prog.total + '</b></div>' +
+    '<div class="kv"><span>Вся Библия (хотя бы раз)</span><b>' + fmtNum(read * 100 / TOTAL_CH, 1) + '%</b></div>' +
+    '<div class="kv"><span>Прочитано глав</span><b>' + read + ' из ' + TOTAL_CH + '</b></div></div>';
+  h += '<div class="card"><div class="kv"><span>Серия дней</span><b>' + streak(plan, t) + '</b></div><div class="kv"><span>Лучшая серия</span><b>' + bestStreak(plan) + '</b></div>' +
+    '<div class="kv"><span>Глав в день за 7 дней</span><b>' + fmtNum(avg7(plan, t), 1) + '</b></div>' +
+    '<div class="kv"><span>Окончание по плану</span><b>' + esc(fmtDate(b.endDate, true)) + '</b></div>' +
+    '<div class="kv"><span>Прогноз окончания</span><b>' + (fc ? esc(fmtDate(fc, true)) : 'план завершён') + '</b></div></div>';
+  h += '<div class="card"><h3 style="margin-bottom:6px">Разделы</h3>';
+  plan.params.streams.forEach(function (st) {
+    var ss = streamStats(plan, st), pct = ss.tot ? Math.round(ss.rd * 100 / ss.tot) : 0;
+    h += '<div style="margin-top:10px"><div class="kv" style="border:0;padding:0 0 4px"><span>' + esc(st.name) + '</span><b>' + ss.rd + '/' + ss.tot + '</b></div><div class="bar"><i style="width:' + pct + '%"></i></div></div>';
+  });
+  return h + '</div></div>';
+}
+
+/* ----- Настройки ----- */
+function settingsHTML(plan) {
+  var h = '<div class="top"><h1>Настройки</h1></div><div class="stack">';
+  h += '<button type="button" class="btn block" data-act="newplan">Новый план</button>';
+  h += '<div class="card"><h3 style="margin-bottom:8px">Планы</h3>';
+  state.plans.forEach(function (p) {
+    var pr = progress(p), active = p.id === state.activeId;
+    if (ui.confirmDel === p.id) {
+      h += '<div class="card err" style="margin-top:8px"><p><b>Удалить план «' + esc(p.name) + '»?</b></p><p class="small">Все отметки и заметки этого плана будут потеряны.</p><div class="grid2" style="margin-top:10px"><button type="button" class="btn danger sm" data-act="delyes" data-id="' + esc(p.id) + '">Да, удалить</button><button type="button" class="btn sec sm" data-act="delno">Отмена</button></div></div>';
+    } else {
+      h += '<div class="row" style="margin-top:8px"><div class="ttl"><b style="font-size:16px">' + esc(p.name) + '</b><small>' + pr.pct + '% · ' + (active ? 'активный' : 'не активный') + '</small></div>' +
+        (active ? '' : '<button type="button" class="btn sec sm" data-act="useplan" data-id="' + esc(p.id) + '">Выбрать</button>') +
+        '<button type="button" class="btn sec sm" data-act="delask" data-id="' + esc(p.id) + '" aria-label="Удалить план ' + esc(p.name) + '">Удалить</button></div>';
+    }
+  });
+  h += '</div>';
+  if (plan) {
+    h += '<div class="card"><h3 style="margin-bottom:8px">Если день пропущен</h3>';
+    POLICIES.forEach(function (o) { h += '<button type="button" class="opt" data-act="policy" data-v="' + o.v + '" aria-pressed="' + (plan.params.missed === o.v) + '"><b>' + o.t + '</b><small>' + o.d + '</small></button>'; });
+    h += '<p class="small muted" style="margin-top:8px">Относится к активному плану.</p></div>';
+  }
+  h += '<div class="card"><h3 style="margin-bottom:8px">Тема</h3><div class="seg">' +
+    [['auto', 'Авто'], ['light', 'Светлая'], ['dark', 'Тёмная']].map(function (x) { return '<button type="button" data-act="theme" data-v="' + x[0] + '" aria-pressed="' + (state.theme === x[0]) + '">' + x[1] + '</button>'; }).join('') + '</div></div>';
+  h += '<div class="card"><h3 style="margin-bottom:8px">Резервная копия</h3><label class="f" for="bk">Скопируйте и сохраните этот текст</label><textarea id="bk" class="inp" readonly>' + esc(JSON.stringify(state)) + '</textarea>' +
+    '<button type="button" class="btn sec block" style="margin-top:8px" data-act="copy">Скопировать</button>' +
+    '<label class="f" for="rs" style="margin-top:14px">Вставьте копию для восстановления</label><textarea id="rs" class="inp" placeholder="Вставьте JSON">' + esc(ui.restoreText || '') + '</textarea>';
+  if (ui.restoreMsg) h += '<p class="errline" style="margin-top:6px">' + esc(ui.restoreMsg) + '</p>';
+  if (ui.restore) h += '<div class="card err" style="margin-top:8px"><p><b>Заменить все данные копией?</b></p><p class="small">Текущие планы (' + state.plans.length + ') будут заменены планами из копии (' + ui.restore.plans.length + ').</p><div class="grid2" style="margin-top:10px"><button type="button" class="btn danger sm" data-act="restoreyes">Да, заменить</button><button type="button" class="btn sec sm" data-act="restoreno">Отмена</button></div></div>';
+  else h += '<button type="button" class="btn block" style="margin-top:8px" data-act="restore">Восстановить</button>';
+  return h + '</div></div>';
+}
+
+/* ----- Мастер ----- */
+function newDraft() {
+  var n = state.plans.length;
+  var d = {name:n ? 'План ' + (n + 1) : 'Мой план', preset:'7', streams:makeStreams('7'), nextId:20, days:250, rate:3.5, c:2, rateMode:'r',
+    startDate:BP.today(), finish:'repeat', missed:'shift', skipRead:false, pre:{}};
+  return d;
+}
+function draftParams(d) { return {streams:d.streams, days:d.days, rate:d.rate, startDate:d.startDate, finish:d.finish, missed:d.missed, skipRead:d.skipRead}; }
+function draftPre(d) {
+  var a = [];
+  Object.keys(d.pre).forEach(function (b) { d.pre[b].forEach(function (c) { a.push(b + ':' + c); }); });
+  return a;
+}
+function nStreams(d) { return Math.max(1, d.streams.filter(function (s) { return s.books.length; }).length); }
+function syncRate(d) {
+  var N = nStreams(d);
+  if (d.finish === 'proportional') {
+    var bl = balance(draftParams(d), draftPre(d));
+    d.rate = bl.rate; d.c = bl.rate > 0 ? N / bl.rate : NaN;
+  } else if (d.rateMode === 'c' && d.c > 0) d.rate = N / d.c;
+  else if (d.rate > 0) d.c = N / d.rate;
+}
+function freeBooks(d) {
+  var used = {};
+  d.streams.forEach(function (s) { s.books.forEach(function (b) { used[b] = 1; }); });
+  return books.filter(function (b) { return !used[b.id]; });
+}
+function balHTML(d) {
+  var bl = balance(draftParams(d), draftPre(d)), h = '';
+  if (bl.errors.length) h += '<div class="stack">' + bl.errors.map(function (e) { return '<div class="errline">' + esc(e) + '</div>'; }).join('') + '</div>';
+  if (bl.streams.length && !bl.errors.length || bl.totalSlots) {
+    h += '<table class="bal"><thead><tr><th>Раздел</th><th>Глав</th><th>Раз за план</th></tr></thead><tbody>';
+    bl.streams.forEach(function (p) { h += '<tr><td>' + esc(p.name) + '</td><td>' + p.chapters + '</td><td>' + p.timesText + '</td></tr>'; });
+    h += '</tbody></table>';
+    h += '<div style="margin-top:8px"><div class="kv"><span>Всего глав в плане</span><b>' + bl.totalSlots + '</b></div><div class="kv"><span>Глав в день</span><b>' + bl.perDayText + '</b></div><div class="kv"><span>Окончание</span><b>' + esc(fmtDate(bl.endDate, true)) + '</b></div></div>';
+    if (bl.starved.length) h += '<div class="warnline">Разделы без глав в плане: ' + esc(bl.starved.join(', ')) + '. Увеличьте скорость или срок.</div>';
+    else if (bl.ratio > 2) h += '<div class="warnline">Разделы проходятся с разной скоростью: самый медленный в ' + fmtNum(bl.ratio, 1) + ' раза медленнее самого быстрого. Можно перераспределить книги или выбрать режим «Пропорционально».</div>';
+  }
+  return h;
+}
+function wizHTML() {
+  var d = ui.wizard, h = '<div class="top"><h1>Новый план</h1>' + (state.plans.length ? '<button type="button" class="btn sec sm" data-act="wcancel">Отмена</button>' : '') + '</div><div class="stack">';
+  if (!state.plans.length) h += '<div class="card"><p>Добро пожаловать. Выберите набор разделов и срок: приложение само разложит главы по дням. Текст Библии берётся с сайта bible.by.</p></div>';
+  h += '<div class="card"><label class="f" for="w-name">Название плана</label><input id="w-name" class="inp" data-w="name" value="' + esc(d.name) + '" maxlength="60"></div>';
+  h += '<div class="card"><h3 style="margin-bottom:8px">Разделы</h3><div class="seg" role="group" aria-label="Набор разделов">' +
+    ['7', '5', '6', 'custom'].map(function (k) { return '<button type="button" data-act="wpreset" data-v="' + k + '" aria-pressed="' + (d.preset === k) + '">' + (k === 'custom' ? 'Свой' : k) + '</button>'; }).join('') + '</div>';
+  var fb = freeBooks(d);
+  d.streams.forEach(function (st, i) {
+    h += '<div class="card" style="margin-top:12px;background:var(--surface2)"><div style="display:flex;gap:8px"><input class="inp" data-w="sname" data-i="' + i + '" value="' + esc(st.name) + '" aria-label="Название раздела" maxlength="40"><button type="button" class="btn sec sm" style="min-height:44px" data-act="sdel" data-i="' + i + '">Удалить</button></div>';
+    h += '<div class="chips">';
+    if (!st.books.length) h += '<span class="small muted">Раздел пуст. Добавьте книги.</span>';
+    st.books.forEach(function (id) {
+      h += '<span class="chip"><button type="button" data-act="bleft" data-i="' + i + '" data-b="' + id + '" aria-label="Сдвинуть влево: ' + esc(bookById[id].name) + '">‹</button><span>' + esc(bookById[id].name) + '</span><button type="button" data-act="bright" data-i="' + i + '" data-b="' + id + '" aria-label="Сдвинуть вправо: ' + esc(bookById[id].name) + '">›</button><button type="button" class="x" data-act="brem" data-i="' + i + '" data-b="' + id + '" aria-label="Убрать: ' + esc(bookById[id].name) + '">×</button></span>';
+    });
+    h += '</div><div class="grid2">';
+    h += '<div><label class="f">Начать с книги</label><select class="inp" data-w="start" data-i="' + i + '"' + (st.books.length < 2 ? ' disabled' : '') + '>' +
+      st.books.map(function (id, k) { return '<option value="' + id + '"' + (k === 0 ? ' selected' : '') + '>' + esc(bookById[id].name) + '</option>'; }).join('') + '</select></div>';
+    h += '<div><label class="f">Добавить</label><select class="inp" data-w="addbook" data-i="' + i + '"' + (fb.length ? '' : ' disabled') + '><option value="">Книга…</option>';
+    if (fb.length) {
+      h += '<option value="all">Все свободные (' + fb.length + ')</option>';
+      CATS.forEach(function (c) {
+        var inCat = fb.filter(function (b) { return b.cat === c.id; });
+        if (!inCat.length) return;
+        h += '<option value="cat:' + c.id + '">Весь раздел: ' + esc(c.name) + ' (' + inCat.length + ')</option>';
+      });
+      CATS.forEach(function (c) {
+        var inCat = fb.filter(function (b) { return b.cat === c.id; });
+        if (!inCat.length) return;
+        h += '<optgroup label="' + esc(c.name) + '">' + inCat.map(function (b) { return '<option value="' + b.id + '">' + esc(b.name) + '</option>'; }).join('') + '</optgroup>';
+      });
+    }
+    h += '</select></div></div></div>';
+  });
+  h += '<button type="button" class="btn sec block" style="margin-top:12px" data-act="sadd">Добавить раздел</button>';
+  h += '<p class="small muted" style="margin-top:8px">Свободных книг: ' + fb.length + '. Книги вне разделов в план не попадают, но остаются на экране «План».</p></div>';
+
+  var prop = d.finish === 'proportional';
+  h += '<div class="card"><h3 style="margin-bottom:8px">Скорость и срок</h3><div class="field"><label class="f" for="w-days">Срок, дней (1–3650)</label><input id="w-days" class="inp" inputmode="numeric" data-w="days" value="' + (isNaN(d.days) ? '' : d.days) + '"></div>' +
+    '<div class="grid2 field"><div><label class="f" for="w-rate">Глав в день</label><input id="w-rate" class="inp" inputmode="decimal" data-w="rate" value="' + trimNum(d.rate) + '"' + (prop ? ' disabled' : '') + '></div>' +
+    '<div><label class="f" for="w-c">Раздел раз в, дней</label><input id="w-c" class="inp" inputmode="decimal" data-w="c" value="' + trimNum(d.c) + '"' + (prop ? ' disabled' : '') + '></div></div>' +
+    '<p class="small muted">' + (prop ? 'В режиме «Пропорционально» скорость вычисляется из срока.' : 'Поля связаны: «Раздел раз в c дней» даёт скорость = число разделов / c.') + '</p></div>';
+  h += '<div class="card"><label class="f" for="w-date">Дата начала</label><input id="w-date" type="date" class="inp" data-w="date" value="' + esc(d.startDate) + '"></div>';
+  h += '<div class="card"><h3 style="margin-bottom:8px">Окончание плана</h3>' + FINISHES.map(function (o) { return '<button type="button" class="opt" data-act="wset" data-k="finish" data-v="' + o.v + '" aria-pressed="' + (d.finish === o.v) + '"><b>' + o.t + '</b><small>' + o.d + '</small></button>'; }).join('') + '</div>';
+  h += '<div class="card"><h3 style="margin-bottom:8px">Если день пропущен</h3>' + POLICIES.map(function (o) { return '<button type="button" class="opt" data-act="wset" data-k="missed" data-v="' + o.v + '" aria-pressed="' + (d.missed === o.v) + '"><b>' + o.t + '</b><small>' + o.d + '</small></button>'; }).join('') + '</div>';
+  var preN = draftPre(d).length;
+  h += '<div class="card"><h3 style="margin-bottom:4px">Уже прочитано</h3><p class="small muted">Отмечено глав: <span id="preN">' + preN + '</span></p>' +
+    '<label class="cb"><input type="checkbox" data-w="skip"' + (d.skipRead ? ' checked' : '') + '><span>Пропускать эти главы в плане</span></label>' +
+    '<button type="button" class="btn sec block" data-act="ptoggle" aria-expanded="' + ui.preOpen + '">' + (ui.preOpen ? 'Скрыть список книг' : 'Отметить по книгам') + '</button>';
+  if (ui.preOpen) {
+    books.forEach(function (b) {
+      var arr = d.pre[b.id] || [];
+      h += '<div class="prow"><label><input type="checkbox" data-w="pfull" data-b="' + b.id + '"' + (arr.length === b.ch ? ' checked' : '') + '><span>' + esc(b.name) + ' <small class="muted">(' + b.ch + ')</small></span></label>' +
+        '<input class="inp" style="min-height:38px" data-w="ptxt" data-b="' + b.id + '" value="' + esc(formatRanges(arr)) + '" placeholder="главы, напр. 1–5, 8" aria-label="Прочитанные главы: ' + esc(b.name) + '"></div>';
+    });
+  }
+  h += '</div>';
+  h += '<div class="card"><h3 style="margin-bottom:8px">Предпросчёт</h3><div id="balBox">' + balHTML(d) + '</div></div>';
+  var errs = balance(draftParams(d), draftPre(d)).errors;
+  h += '<div class="sticky-act"><button type="button" id="wcreate" class="btn block" data-act="wcreate"' + (errs.length ? ' disabled' : '') + '>Создать план</button></div>';
+  return h + '</div>';
+}
+function wizRefresh() {
+  var d = ui.wizard;
+  if (!d) return;
+  syncRate(d);
+  var a = document.activeElement;
+  var r = $('w-rate'), c = $('w-c');
+  if (r && a !== r) r.value = trimNum(d.rate);
+  if (c && a !== c) c.value = trimNum(d.c);
+  if ($('balBox')) $('balBox').innerHTML = balHTML(d);
+  var bt = $('wcreate');
+  if (bt) bt.disabled = balance(draftParams(d), draftPre(d)).errors.length > 0;
+  if ($('preN')) $('preN').textContent = draftPre(d).length;
+}
+function startWizard() { ui.wizard = newDraft(); ui.preOpen = false; syncRate(ui.wizard); }
+
+/* ----- Отрисовка ----- */
+function render(keep) {
+  var plan = activePlan();
+  if (!plan && !ui.wizard) startWizard();
+  var scr = $('screen'), y = window.scrollY;
+  $('tabbar').hidden = !!ui.wizard;
+  $('app').classList.toggle('nobar', !!ui.wizard);
+  Array.prototype.forEach.call(document.querySelectorAll('#tabbar button'), function (b) {
+    if (b.getAttribute('data-tab') === ui.tab) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+  });
+  var f = {today:todayHTML, plan:planHTML, stats:statsHTML, settings:settingsHTML}[ui.tab] || todayHTML;
+  scr.innerHTML = ui.wizard ? wizHTML() : f(plan);
+  window.scrollTo(0, keep ? y : 0);
+}
+
+/* ----- Действия ----- */
+function persist() { saveState(); }
+function toggleKey(plan, key) {
+  if (plan.done[key]) delete plan.done[key]; else plan.done[key] = BP.today();
+}
+function addBooksToStream(d, i, val) {
+  var st = d.streams[i], fb = freeBooks(d), add = [];
+  if (val === 'all') add = fb;
+  else if (val.indexOf('cat:') === 0) add = fb.filter(function (b) { return b.cat === val.slice(4); });
+  else add = fb.filter(function (b) { return b.id === val; });
+  add.forEach(function (b) { st.books.push(b.id); });
+}
+function setPre(d, id, arr) {
+  if (arr.length) d.pre[id] = arr; else delete d.pre[id];
+}
+
+function onClick(e) {
+  if (e.target.closest('a')) return;
+  var el = e.target.closest('[data-act]');
+  if (!el) return;
+  var act = el.getAttribute('data-act'), plan = activePlan(), d = ui.wizard;
+  var g = function (k) { return el.getAttribute('data-' + k); };
+  switch (act) {
+    case 'tog': toggleKey(plan, g('key')); if (ui.pin == null) ui.pin = dayInfo(plan, BP.today()).day; persist(); render(true); return;
+    case 'allday': {
+      var dn = +g('d'), sl = daySlots(plan, dn), all = isDayDone(plan, dn);
+      sl.forEach(function (s) { if (all) delete plan.done[s.key]; else if (!plan.done[s.key]) plan.done[s.key] = BP.today(); });
+      if (ui.pin == null) ui.pin = dn;
+      persist(); render(true); return;
+    }
+    case 'ahead': ui.pin = +g('d'); render(); return;
+    case 'backtoday': ui.pin = null; render(); return;
+    case 'cell': toggleKey(plan, g('book') + ':' + g('ch') + '#1'); persist(); render(true); return;
+    case 'pview': ui.planView = g('v'); render(true); return;
+    case 'coll': ui.collapsed[g('id')] = !ui.collapsed[g('id')]; render(true); return;
+    case 'newplan': startWizard(); render(); return;
+    case 'useplan': state.activeId = g('id'); ui.pin = null; persist(); render(true); return;
+    case 'delask': ui.confirmDel = g('id'); render(true); return;
+    case 'delno': ui.confirmDel = null; render(true); return;
+    case 'delyes':
+      state.plans = state.plans.filter(function (p) { return p.id !== g('id'); });
+      if (state.activeId === g('id')) state.activeId = state.plans[0] ? state.plans[0].id : null;
+      ui.confirmDel = null; ui.pin = null; persist();
+      if (!state.plans.length) { ui.tab = 'today'; startWizard(); }
+      render(); return;
+    case 'policy': plan.params.missed = g('v'); ui.pin = null; persist(); render(true); return;
+    case 'theme': state.theme = g('v'); applyTheme(); persist(); render(true); return;
+    case 'copy': copyBackup(); return;
+    case 'restore': {
+      var txt = ($('rs') || {}).value || '';
+      ui.restoreText = txt; ui.restoreMsg = '';
+      var parsed = null;
+      try { parsed = normalizeState(JSON.parse(txt)); } catch (err) { parsed = null; }
+      if (!parsed || !parsed.plans.length) ui.restoreMsg = 'Не удалось прочитать копию. Проверьте, что вставлен весь текст.';
+      else ui.restore = parsed;
+      render(true); return;
+    }
+    case 'restoreno': ui.restore = null; render(true); return;
+    case 'restoreyes':
+      state = ui.restore; ui.restore = null; ui.restoreText = ''; ui.restoreMsg = ''; ui.pin = null;
+      applyTheme(); persist(); toast('Копия восстановлена'); render(); return;
+    /* мастер */
+    case 'wcancel': ui.wizard = null; render(); return;
+    case 'wpreset': d.preset = g('v'); d.streams = makeStreams(g('v')); syncRate(d); render(true); return;
+    case 'sdel': d.streams.splice(+g('i'), 1); syncRate(d); render(true); return;
+    case 'sadd': d.streams.push({id:'s' + (d.nextId++), name:'Раздел ' + (d.streams.length + 1), books:[]}); render(true); return;
+    case 'bleft': case 'bright': {
+      var arr = d.streams[+g('i')].books, k = arr.indexOf(g('b')), j = act === 'bleft' ? k - 1 : k + 1;
+      if (k >= 0 && j >= 0 && j < arr.length) { var tmp = arr[k]; arr[k] = arr[j]; arr[j] = tmp; }
+      render(true); return;
+    }
+    case 'brem': {
+      var a2 = d.streams[+g('i')].books; a2.splice(a2.indexOf(g('b')), 1); syncRate(d); render(true); return;
+    }
+    case 'wset': d[g('k')] = g('v'); syncRate(d); render(true); return;
+    case 'ptoggle': ui.preOpen = !ui.preOpen; render(true); return;
+    case 'wcreate': {
+      var bl = balance(draftParams(d), draftPre(d));
+      if (bl.errors.length) return;
+      var pl = BP.makePlan((d.name || '').trim() || 'План', draftParams(d), d.pre);
+      state.plans.push(pl); state.activeId = pl.id; ui.wizard = null; ui.tab = 'today'; ui.pin = null;
+      persist(); render(); return;
+    }
+  }
+}
+function onInput(e) {
+  var el = e.target, d = ui.wizard;
+  if (el.hasAttribute('data-note')) {
+    var plan = activePlan(), k = el.getAttribute('data-note');
+    if (el.value) plan.notes[k] = el.value; else delete plan.notes[k];
+    persist(); return;
+  }
+  if (!d || !el.hasAttribute('data-w')) return;
+  var w = el.getAttribute('data-w');
+  if (w === 'name') d.name = el.value;
+  else if (w === 'sname') d.streams[+el.getAttribute('data-i')].name = el.value;
+  else if (w === 'days') { d.days = /^\d+$/.test(el.value.trim()) ? +el.value : NaN; wizRefresh(); }
+  else if (w === 'rate') { d.rate = parseNum(el.value); d.rateMode = 'r'; wizRefresh(); }
+  else if (w === 'c') { d.c = parseNum(el.value); d.rateMode = 'c'; wizRefresh(); }
+  else if (w === 'date') { d.startDate = el.value; wizRefresh(); }
+  if (w === 'sname') wizRefresh();
+}
+function onChange(e) {
+  var el = e.target, d = ui.wizard;
+  if (!d || !el.hasAttribute('data-w')) return;
+  var w = el.getAttribute('data-w'), i = +el.getAttribute('data-i'), b = el.getAttribute('data-b');
+  if (w === 'start') { d.streams[i].books = rotateBooks(d.streams[i].books, el.value); render(true); }
+  else if (w === 'addbook') { if (el.value) { addBooksToStream(d, i, el.value); syncRate(d); render(true); } }
+  else if (w === 'skip') { d.skipRead = el.checked; wizRefresh(); }
+  else if (w === 'pfull') {
+    var bk = bookById[b], arr = [];
+    if (el.checked) for (var c = 1; c <= bk.ch; c++) arr.push(c);
+    setPre(d, b, arr);
+    var row = el.closest('.prow'), tx = row.querySelector('[data-w="ptxt"]');
+    tx.value = formatRanges(arr); wizRefresh();
+  } else if (w === 'ptxt') {
+    var bk2 = bookById[b], a3 = parseChapters(el.value, bk2.ch);
+    setPre(d, b, a3);
+    el.value = formatRanges(a3);
+    el.closest('.prow').querySelector('[data-w="pfull"]').checked = a3.length === bk2.ch;
+    wizRefresh();
+  }
+}
+function copyBackup() {
+  var txt = JSON.stringify(state), ta = $('bk');
+  var fallback = function () {
+    try { ta.focus(); ta.select(); toast(document.execCommand('copy') ? 'Скопировано' : 'Текст выделен, скопируйте вручную'); }
+    catch (err) { toast('Текст выделен, скопируйте вручную'); }
+  };
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(function () { toast('Скопировано'); }, fallback);
+    else fallback();
+  } catch (err) { fallback(); }
+}
+
+/* ----- Запуск ----- */
+$('screen').addEventListener('click', onClick);
+$('screen').addEventListener('input', onInput);
+$('screen').addEventListener('change', onChange);
+$('tabbar').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-tab]');
+  if (!b) return;
+  ui.tab = b.getAttribute('data-tab'); ui.pin = null; ui.confirmDel = null; ui.restore = null; ui.restoreMsg = '';
+  render();
+});
+document.addEventListener('visibilitychange', function () {
+  if (!document.hidden && !ui.wizard && ui.tab !== 'settings') { ui.pin = null; render(true); }
+});
+var lastW = window.innerWidth;
+window.addEventListener('resize', function () {
+  if (window.innerWidth !== lastW) { lastW = window.innerWidth; if (!ui.wizard && ui.tab === 'plan' && ui.planView === 'hex') render(true); }
+});
+loadState();
+applyTheme();
+render();
+
+})();
+
+</script>
+<script>if("serviceWorker" in navigator&&location.protocol.indexOf("http")===0){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}</script>
+</body>
+</html>
